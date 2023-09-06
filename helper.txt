@@ -1,0 +1,15 @@
+npm install -g @ionic/cli
+ionic start
+ionic serve
+
+
+Set JAVA_HOME and SDK Path
+ionic capacitor platform add android
+ionic capacitor run android
+
+
+ set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+ Get-ExecutionPolicy -list
+
+ npm i @ionic/lab
+ionic serve --lab

@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Signature Data List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Signature Data List</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Get List From API-->
+
+  <ion-list >
+    <ion-item *ngFor="let item of getJsonvalue">
+      <ion-img  class="saturate" src="{{item.link}}"></ion-img>
+      
+    </ion-item>
+  </ion-list>
+
+  <div>
+    <p>Back to Previous</p>
+    <ion-button href="">Back</ion-button>
+  </div>
+</ion-content>

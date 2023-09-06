@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Singnature
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="centerClass">
+    
+    <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button color="danger" (click)="clearPad()">Clear</ion-button>
+        </ion-col>
+        <ion-col size="4" offset="2">
+          <ion-button color="secondary" (click)="savePad()">Save</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  <img src='{{ signatureImg }}' />
+ 
+    <!--Toast Button-->
+
+    <ion-button  (click)="uploadSignature()"
+      ><ion-icon slot="start" name="cloud-upload-outline"></ion-icon>Upload
+      Data</ion-button
+    >
+
+<!-- routing -->
+        <p>Show Previous Data List</p>
+        <ion-button (click)="openDetailsPage()">Data List</ion-button>
+
+  
+  </div>
+</ion-content>

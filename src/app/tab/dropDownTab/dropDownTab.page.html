@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Dropdown </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Dropdown</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-toolbar>
+      <!--input field -->
+      <ion-item>
+        <ion-input
+         type="text"
+          #myInput
+          labelPlacement="stacked"
+          [clearInput]="true"
+          labelPlacement="floating"
+          placeholder="E130hw"
+        
+        >
+          <div slot="label">
+            Post Code<ion-text color="danger">(Required)</ion-text>
+          </div>
+        </ion-input>
+      </ion-item>
+
+      <!--Button -->
+      <ion-buttons slot="primary"(click)="loadApiData(myInput.value)">
+        <ion-button fill="solid" color="primary"  >
+          <ion-icon slot="end" name="cloud-download-outline"></ion-icon>
+          Get Data
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+
+    <br />
+
+    <ion-list>
+      <ion-item >
+        <ion-select
+          aria-label="Addrees"
+          placeholder="Select Addrees"
+          (ionChange)="handleChange($event)"
+        >
+        <ion-item *ngFor="let item of getJsonvalue.data.addresses.addresses" >
+          <ion-select-option value={{item}}>{{item}}</ion-select-option>
+          
+        </ion-item>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+<!-- api data save button -->
+    <ion-button  (click)="postAddressDataMethod()" 
+      ><ion-icon slot="start" name="cloud-upload-outline"></ion-icon>Upload
+      Data</ion-button
+    >
+ <ion-content>
+    <div class="ion-padding">
+      <p>Show Previous Data List</p>
+      <ion-button (click)="openDetailsPage()">Data List</ion-button>
+    </div>
+  </ion-content>
+
+ 
+</ion-content>
